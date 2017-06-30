@@ -1,4 +1,4 @@
-import React, {component} from 'react';
+import React, {Component} from 'react';
 
 class Comment extends Component {
 	render() {
@@ -12,3 +12,5 @@ class Comment extends Component {
 		)
 	}
 }
+
+export default Comment

@@ -1,5 +1,7 @@
-import React, {Component} from 'react';
-// import Comment from './Comment';
+import React, {
+	Component
+} from 'react';
+import Comment from './Comment';
 
 class CommentList extends Component {
 	static defaultProps = {
@@ -23,7 +25,7 @@ class CommentList extends Component {
 		// 		})}
 		// 	</div>
 		// )
-		
+
 		return (
 			<div>
 				{this.props.comments.map((comment, i) => <Comment comment={comment} key={i}/>)}
