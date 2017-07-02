@@ -23,7 +23,7 @@ class CommentList extends Component {
 		// 		})}
 		// 	</div>
 		// )
-		
+
 		return (
 			<div>
 				{this.props.comments.map((comment, i) => <Comment comment={comment} key={i}/>)}
