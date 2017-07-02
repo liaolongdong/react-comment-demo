@@ -24,8 +24,14 @@ class CommentInput extends Component {
 	}
 	handleSubmit() {
 		if(this.props.onSubmit){
-			const {username, content} = this.state;
-			this.props.onSubmit({username, content});
+			// const {username, content} = this.state;
+			// this.props.onSubmit({username, content});
+			
+			this.props.onSubmit({
+				username: this.state.username,
+				content: this.state.content,
+				createdTime: + new Date()
+			});
 		}
 		this.setState({
 			content: ''
@@ -42,16 +48,6 @@ class CommentInput extends Component {
 		if(username){
 			this.setState({username});
 		}
-	}
-	_loadComments() {
-		let comments = localStorage.getItem('comments');
-		if(comments){
-			comments = JSON.parse(comments);
-			this.setState({comments});
-		}
-	}
-	_saveComments(comments) {
-		localStorage.setItem('comments', JSON.stringify(comments));
 	}
 	componentWillMount() {
 		this._loadUsername();
