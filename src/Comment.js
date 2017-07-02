@@ -32,7 +32,7 @@ class Comment extends Component {
 		}else if(duration > 3600 && duration < 3600*60){
 			timeString = `${Math.round(duration/3600)}小时前`;
 		}else{
-			timeString = `${Math.round(duration/3600/24)}天前`;
+			timeString = `${new Date(duration).tolocaleString()}`;
 		}
 		this.setState({
 			timeString: timeString
