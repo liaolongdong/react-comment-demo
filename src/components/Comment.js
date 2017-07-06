@@ -29,10 +29,17 @@ class Comment extends Component {
 			timeString = `${Math.round(duration)}秒前`;
 		}else if(duration >= 60 && duration < 3600){
 			timeString = `${Math.round(duration/60)}分钟前`;
-		}else if(duration > 3600 && duration < 3600*60){
+		}else if(duration > 3600 && duration < 3600*24){
 			timeString = `${Math.round(duration/3600)}小时前`;
 		}else{
-			timeString = `${new Date(duration).tolocaleString()}`;
+			let commentTime = new Date(Number(comment.createdTime));
+			let year = commentTime.getFullYear();
+			let month = (commentTime.getMonth() + 1) > 9 ? (commentTime.getMonth() + 1) : '0' + (commentTime.getMonth() + 1);
+			let day = commentTime.getDate() > 9 ? commentTime.getDate() : '0' + commentTime.getDate();
+			let hour = commentTime.getHours() > 9 ? commentTime.getHours() : '0' + commentTime.getHours();
+			let minute = commentTime.getMinutes() > 9 ? commentTime.getMinutes() : '0' + commentTime.getMinutes();
+			let second = commentTime.getSeconds() > 9 ? commentTime.getSeconds() : '0' + commentTime.getSeconds();
+			timeString = `${year}年${month}月${day}日 ${hour}:${minute}:${second}`;
 		}
 		this.setState({
 			timeString: timeString
