@@ -48,6 +48,14 @@ export const durationTime = (timeStamp) => {
 // 测试结果
 console.log(durationTime(1506664038876)); // 10分钟前
 
+// 手机格式校验
+export const checkPhoneNum = (phoneNum) => {
+  let phoneReg = /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[0-9]|18[0-9]|14[0-9])[0-9]{8}$/;
+  return phoneReg.test(phoneNum);
+}
+// 测试结果
+console.log(checkPhoneNum(13556891025)); // true
+
 // 手机格式化（135 **** 1025、135-****-1025）
 // 参数说明：phoneNum 需要格式化的手机号 connector 格式化的连接字符
 export const formatPhoneNum = (phoneNum, connector) => {
