@@ -198,4 +198,4 @@ export const quickSort = (arr) => {
 
 // 测试结果
 let arr = [6, 2, 9, 4, 7, 1, 8, 3, 5, 6, 9, 3];
-console.log(quickSort(arr));
+console.log(quickSort(arr)); // [1, 2, 3, 3, 4, 5, 6, 6, 7, 8, 9, 9]
